@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+  <div class="container py-4">
+    {% if user_profile %}
+      <h1>Welcome to the profile of {{ user_profile[1] }}</h1>
+      <h4>User name is {{ user_profile[1] }}</h4>
+      <h4>User Email is {{ user_profile[2] }}</h4>
+      <h4>User City is {{ user_profile[3] }}</h4>
+      <h4>User Hobby is {{ user_profile[4] }}</h4>
+      <hr>
+    {% else %}
+      <div class="alert alert-warning">User not found.</div>
+    {% endif %}
+    <a class="btn btn-secondary" href="{{ url_for('user_data') }}">All users list</a>
+  </div>
+</body>
+</html>

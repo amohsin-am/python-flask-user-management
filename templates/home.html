@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page_type or "Home" }}</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ url_for('hello') }}">Users</a>
+    <div>
+      <a class="btn btn-outline-light btn-sm" href="{{ url_for('user_form') }}">Add User</a>
+      <a class="btn btn-light btn-sm" href="{{ url_for('user_data') }}">View Users</a>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <div class="jumbotron">
+      <h1 class="display-4">Welcome!</h1>
+      <p class="lead">This is your Flask User Management System.</p>
+      <hr class="my-4" />
+      <p class="mb-4">Use the buttons below to add a user or see all users.</p>
+      <a class="btn btn-primary btn-lg" href="{{ url_for('user_form') }}">Add User</a>
+      <a class="btn btn-success btn-lg" href="{{ url_for('user_data') }}">View Users</a>
+    </div>
+  </div>
+</body>
+</html>

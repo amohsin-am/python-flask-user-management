@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Data</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+  <div class="container py-4">
+    <a class="btn btn-primary mb-3" href="{{ url_for('user_form') }}">Add new Users</a>
+    <h1>User data list</h1>
+    <hr>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>City</th>
+          <th>Hobby</th>
+          <th style="width:200px;">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in user_data_list %}
+          <tr>
+            <td>{{ user[1] }}</td>
+            <td>{{ user[2] }}</td>
+            <td>{{ user[3] }}</td>
+            <td>{{ user[4] }}</td>
+            <td>
+              <a class="btn btn-info btn-sm" href="{{ url_for('user_profile', user_id=user[0]) }}">Show Profile</a>
+              <a class="btn btn-danger btn-sm" href="{{ url_for('delete_profile', user_id=user[0]) }}">Delete Profile</a>
+            </td>
+          </tr>
+        {% else %}
+          <tr><td colspan="5" class="text-center">No users yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
