@@ -1,14 +1,18 @@
 from flask import Flask, redirect, url_for, request, render_template
 import mysql.connector
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
 cnx = mysql.connector.connect(
-    host="localhost",
-    port=3306,
-    user="root",
-    password="Hellyeah@098",
-    database="batch_6"
+    host=os.getenv("DB_HOST", "localhost"),
+    port=int(os.getenv("DB_PORT", "3306")),
+    user=os.getenv("DB_USER", "root"),
+    password=os.getenv("DB_PASS", ""),
+    database=os.getenv("DB_NAME", "batch_6")
 )
 cursor = cnx.cursor()
 
@@ -34,9 +38,10 @@ def admin_1():
             (users_name, users_email, users_city, users_hobby)
         )
         cnx.commit()
-        return redirect(url_for('user_data'))
+        return redirect(url_for('user_data')) 
 
     return render_template('home.html', page_type="Admin", my_num=1, my_list=["Alpha","Beta"])
+
 
 @app.route('/user_name/<user_name>')
 def user(user_name):
@@ -70,6 +75,7 @@ def delete_profile(user_id):
     cursor.execute("DELETE FROM users WHERE id = %s", (user_id,))
     cnx.commit()
     return redirect(url_for('user_data'))
+
 
 @app.route('/add', methods=['GET', 'POST'])
 def add_spec():
