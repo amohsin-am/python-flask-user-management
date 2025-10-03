@@ -1,5 +1,6 @@
-Flask User Management System
-📌 Overview
+### Flask User Management System
+
+## 📌 Overview
 
 A simple Flask web application that allows users to:
 
@@ -13,7 +14,7 @@ Delete users
 
 This project demonstrates integration between Flask (Python backend), MySQL database, and Bootstrap frontend.
 
-🛠 Tech Stack
+## 🛠 Tech Stack
 
 Backend: Python (Flask)
 
@@ -23,7 +24,7 @@ Frontend: HTML, CSS, Bootstrap
 
 Version Control: Git & GitHub
 
-🗄 Database Design
+## 🗄 Database Design
 
 Table: users
 
@@ -33,7 +34,7 @@ user_name	VARCHAR(50)	Full Name
 email	VARCHAR(100)	Email Address
 city	VARCHAR(50)	City Name
 hobby	VARCHAR(50)	Hobby
-📂 Project Structure
+## 📂 Project Structure
 Python_final_project/
 │── app.py                # Main Flask app
 │── .env                  # Environment variables (DB credentials)
@@ -47,7 +48,7 @@ Python_final_project/
 │── static/               # Static files (CSS/JS)
 │    └── style.css
 
-▶️ Running the Project
+## ▶️ Running the Project
 1. Clone the repository
 git clone https://github.com/amohsin-am/python-flask-user-management.git
 cd python-flask-user-management
@@ -62,37 +63,32 @@ pip install flask mysql-connector-python python-dotenv
 
 4. Set up MySQL database
 
-Run the following SQL commands in MySQL Workbench:
-
-CREATE DATABASE IF NOT EXISTS batch_6;
-
-USE batch_6;
-
-CREATE TABLE IF NOT EXISTS users (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  user_name VARCHAR(50) NOT NULL,
-  email VARCHAR(100) NOT NULL UNIQUE,
-  city VARCHAR(50) NOT NULL,
-  hobby VARCHAR(50) NOT NULL
+ - Run the following SQL commands in MySQL Workbench:
+ - CREATE DATABASE IF NOT EXISTS batch_6;
+ - USE batch_6;
+ - CREATE TABLE IF NOT EXISTS users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    city VARCHAR(50) NOT NULL,
+    hobby VARCHAR(50) NOT NULL
 );
 
 5. Configure environment variables
 
-Create a .env file in the root project folder:
+  - Create a .env file in the root project folder:
 
-DB_HOST=localhost
-DB_PORT=3306
-DB_USER=root
-DB_PASS=your_password
-DB_NAME=batch_6
+    - DB_HOST=localhost
+    - DB_PORT=3306
+    - DB_USER=root
+    - DB_PASS=your_password
+    - DB_NAME=batch_6
 
 6. Run the Flask app
-python app.py
+  - python app.py
+      - Visit: http://127.0.0.1:5000/
 
-
-Visit: http://127.0.0.1:5000/
-
-🚀 Features
+## 🚀 Features
 
 ✅ Add User (via form)
 
@@ -102,10 +98,15 @@ Visit: http://127.0.0.1:5000/
 
 ✅ Delete User
 
-🤝 Contribution
+## 🤝 Contribution
 
-Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change.
+  - Abhay
+  - GitHub
+  - Google
+  - ChatGPT
+  - Gemini
 
-📜 License
+
+## 📜 License
 
 This project is open-source and available under the MIT License.
